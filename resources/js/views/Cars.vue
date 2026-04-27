@@ -34,9 +34,9 @@
             <button
               v-for="cat in [
                 { id: 'all',      label: 'Összes'      },
-                { id: 'supercar', label: 'Szuperautók' },
-                { id: 'luxury',   label: 'Luxusautók'  },
                 { id: 'oldtimer', label: 'Oldtimerek'  },
+                { id: 'supercar', label: 'Szuperautók' },
+                { id: 'luxury',   label: 'Luxusautók'  }
               ]"
               :key="cat.id"
               :class="['filter-btn', { active: activeCategory === cat.id }]"
