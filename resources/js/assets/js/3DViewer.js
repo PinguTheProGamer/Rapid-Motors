@@ -26,6 +26,8 @@ export function use3DViewer(viewerContainer) {
   let dirResetTimer = null;
   let prevMouseX = 0, prevMouseY = 0;
 
+  let loadGeneration = 0;
+
   const showHintSoon = (delay = 900) => {
     clearTimeout(hintTimer);
     hintTimer = setTimeout(() => { showRotateHint.value = true; }, delay);
@@ -96,6 +98,8 @@ export function use3DViewer(viewerContainer) {
     if (!viewerContainer.value) return;
     cleanup3DViewer();
 
+    const myGeneration = ++loadGeneration;
+
     const modelUrl = MODEL_MAP[carName] ?? null;
     if (!modelUrl) { viewerState.value = 'unavailable'; return; }
     viewerState.value = 'loading';
@@ -161,8 +165,10 @@ export function use3DViewer(viewerContainer) {
     controls.maxPolarAngle  = Math.PI / 2 - 0.02;
 
     try {
-      const gltf  = await new GLTFLoader().loadAsync(modelUrl);
-      if (!scene) return;
+      const gltf = await new GLTFLoader().loadAsync(modelUrl);
+
+      if (myGeneration !== loadGeneration) return;
+
       const model = gltf.scene;
       const box    = new THREE.Box3().setFromObject(model);
       const size   = box.getSize(new THREE.Vector3());
@@ -194,6 +200,9 @@ export function use3DViewer(viewerContainer) {
       animate();
 
     } catch (err) {
+
+      if (myGeneration !== loadGeneration) return;
+
       console.error('3D model load error:', err);
       viewerState.value = 'unavailable';
       cleanup3DViewer();
@@ -213,6 +222,7 @@ export function use3DViewer(viewerContainer) {
   };
 
   const destroyViewer = () => {
+    loadGeneration++;
     cleanup3DViewer();
     clearTimeout(dirResetTimer);
     clearTimeout(hintTimer);
