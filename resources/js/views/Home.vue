@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted, inject } from 'vue'
 import axios from 'axios'
-import { getImagePath } from '../assets/js/CarData.js'
+import { getImagePath, huCategoryMap } from '../assets/js/CarData.js'
 
 const featuredCars  = ref([])
 const hoveredCar    = ref(null)
@@ -204,7 +204,7 @@ onUnmounted(() => {
           </div>
           <div class="car-card-content">
             <div class="car-card-category">
-              {{ car.category === 'oldtimer' ? 'OLDTIMER' : 'SZUPERAUTÓ' }}
+             {{ huCategoryMap.get(car.category).toUpperCase() }}
             </div>
             <h3 class="car-card-title">{{ car.manufacturer }} {{ car.name }}</h3>
             <div class="car-card-specs">

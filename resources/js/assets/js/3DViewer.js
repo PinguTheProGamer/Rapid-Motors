@@ -162,6 +162,7 @@ export function use3DViewer(viewerContainer) {
 
     try {
       const gltf  = await new GLTFLoader().loadAsync(modelUrl);
+      if (!scene) return;
       const model = gltf.scene;
       const box    = new THREE.Box3().setFromObject(model);
       const size   = box.getSize(new THREE.Vector3());
