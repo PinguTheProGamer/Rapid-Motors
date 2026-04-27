@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 210.0,
                 'acceleration' => 5.4,
                 'description' => 'Az amerikai "muscle car" éra egyik legmeghatározóbb darabja. Brutális erő és összetéveszthetetlen forma.',
-                'is_featured' => false,
+                'is_featured' => true,
             ],
             [
                 'name' => '300SL Gullwing',
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 260.0,
                 'acceleration' => 8.8,
                 'description' => 'Ikonikus sirályszárnyú ajtókkal rendelkező sportkocsi. Az 50-es évek szuperautója.',
-                'is_featured' => true,
+                'is_featured' => false,
             ],
             [
                 'name' => 'E-Type Series 1',
@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 280.0,
                 'acceleration' => 6.1,
                 'description' => 'A világ legértékesebb autója. Mindössze 36 darab készült belőle.',
-                'is_featured' => true,
+                'is_featured' => false,
             ],
             [
                 'name' => '911 Carrera RS 2.7',
@@ -102,7 +102,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 420.0,
                 'acceleration' => 2.4,
                 'description' => 'A Bugatti hiperautó megtestesítője. 1500 lóerő, négyturbós W16 motor és elektronikusan korlátozott 420 km/h-s végsebesség.',
-                'is_featured' => true,
+                'is_featured' => false,
             ],
             [
                 'name' => 'SF90 Stradale',
@@ -154,7 +154,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 345.0,
                 'acceleration' => 2.6,
                 'description' => 'A szent hármasság német tagja. Elektromos és benzines erő tökéletes szimbiózisa.',
-                'is_featured' => true,
+                'is_featured' => false,
             ],
             [
                 'name' => 'AMG One',
@@ -193,7 +193,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 400.0,
                 'acceleration' => 1.9,
                 'description' => 'A világ első négyüléses megahyperautója. Családi szuperautó új definíciója.',
-                'is_featured' => true,
+                'is_featured' => false,
             ],
             [
                 'name' => 'Valkyrie',
@@ -206,7 +206,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 402.0,
                 'acceleration' => 2.5,
                 'description' => 'Adrian Newey F1 mérnök remeke. Szélcsatorna és utca közötti határ.',
-                'is_featured' => true,
+                'is_featured' => false,
             ],
             [
                 'name' => 'GT2 RS',
@@ -219,7 +219,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 340.0,
                 'acceleration' => 2.7,
                 'description' => 'A leggyorsabb utcai legális 911. Nürburgring pályarekord-tartó.',
-                'is_featured' => false,
+                'is_featured' => true,
             ],
             [
                 'name' => 'Senna',
@@ -245,7 +245,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 350.0,
                 'acceleration' => 2.5,
                 'description' => 'Lamborghini első V12 plug-in hybridja. Az Aventador utódja.',
-                'is_featured' => true,
+                'is_featured' => false,
             ],
             [
                 'name' => 'Jesko Absolut',
@@ -258,7 +258,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 531.0,
                 'acceleration' => 2.5,
                 'description' => 'Koenigsegg végsebességre optimalizált hyperautója. Elméleti maximum: 531 km/h.',
-                'is_featured' => true,
+                'is_featured' => false,
             ],
             [
                 'name' => 'LaFerrari',
@@ -271,7 +271,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 350.0,
                 'acceleration' => 2.4,
                 'description' => 'A szent hármasság olasz tagja. Ferrari első hibrid hyperautója.',
-                'is_featured' => true,
+                'is_featured' => false,
             ],
             [
                 'name' => 'Venom F5',
@@ -314,7 +314,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 403.0,
                 'acceleration' => 2.9,
                 'description' => 'A McLaren F1 szellemi utódja. Központi vezetőülés, három ülés.',
-                'is_featured' => true,
+                'is_featured' => false,
             ],
             [
                 'name' => 'Battista',
@@ -327,7 +327,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 350.0,
                 'acceleration' => 1.9,
                 'description' => 'Tisztán elektromos hyperscar olasz dizájnnal. 1900 lóerő csendben.',
-                'is_featured' => true,
+                'is_featured' => false,
             ],
             [
                 'name' => 'Urus Performante',
@@ -353,7 +353,7 @@ class DatabaseSeeder extends Seeder
                 'top_speed' => 320.0,
                 'acceleration' => 3.7,
                 'description' => 'Ikonikus sirályszárnyas szuperautó brutális V8 hanggal és klasszikus AMG karakterrel.',
-                'is_featured' => false,
+                'is_featured' => true,
             ],
         ];
 
