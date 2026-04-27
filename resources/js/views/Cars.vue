@@ -229,10 +229,12 @@
 
 <script setup>
 import { ref, computed, watch, nextTick, onMounted, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
 import { use3DViewer } from '../assets/js/3DViewer.js';
 import { MODEL_MAP, getImagePath } from '../assets/js/CarData.js';
 import axios from 'axios';
 
+const route         = useRoute();
 const allCars       = ref([]);
 const selectedCar   = ref(null);
 const activeCategory = ref('all');
@@ -257,6 +259,8 @@ watch(viewerState, (state) => {
   }
 });
 
+const VALID_CATEGORIES = ['oldtimer', 'supercar', 'luxury'];
+
 const filteredCars = computed(() => {
   let cars = allCars.value;
   if (activeCategory.value !== 'all') {
@@ -272,10 +276,17 @@ const filteredCars = computed(() => {
   return cars;
 });
 
+const selectFirstFiltered = async () => {
+  destroyViewer();
+  selectedCar.value = null;
+  if (filteredCars.value.length) {
+    await selectCar(filteredCars.value[0]);
+  }
+};
+
 const filterByCategory = (id) => {
   activeCategory.value = id;
-  selectedCar.value = null;
-  destroyViewer();
+  selectFirstFiltered();
 };
 
 const selectCar = async (car) => {
@@ -297,12 +308,28 @@ const formatPrice = (price) =>
     minimumFractionDigits: 0,
   }).format(price);
 
+watch(() => route.query.category, (newCat) => {
+  const resolved = VALID_CATEGORIES.includes(newCat) ? newCat : 'all';
+  if (resolved !== activeCategory.value) {
+    activeCategory.value = resolved;
+    selectFirstFiltered();
+  }
+});
+
 onMounted(async () => {
   heroLoaded.value = true;
+
+  const urlCategory = route.query.category;
+  if (VALID_CATEGORIES.includes(urlCategory)) {
+    activeCategory.value = urlCategory;
+  }
+
   try {
     const { data } = await axios.get('/api/cars');
     allCars.value = data;
-    if (data.length) selectCar(data[0]);
+    if (filteredCars.value.length) {
+      await selectCar(filteredCars.value[0]);
+    }
   } catch (e) {
     console.error('Error fetching cars:', e);
   }
