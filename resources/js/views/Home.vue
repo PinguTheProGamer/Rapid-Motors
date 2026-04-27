@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted, inject } from 'vue'
 import axios from 'axios'
-import { getImagePath } from '../assets/js/carData'
+import { getImagePath } from '../assets/js/CarData.js'
 
 const featuredCars  = ref([])
 const hoveredCar    = ref(null)

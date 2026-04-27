@@ -30,10 +30,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Először a 'cache' tábla törlése, ha létezik
         Schema::dropIfExists('cache');
-
-        // Majd a 'cache_locks' tábla törlése, ha létezik
         Schema::dropIfExists('cache_locks');
     }
 };

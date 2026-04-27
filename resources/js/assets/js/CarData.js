@@ -1,4 +1,4 @@
-// ── Modelltérkép: csak az itt felsorolt autókhoz tartozik 3D modell.
+// Modelltérkép: csak az itt felsorolt autókhoz tartozik 3D modell.
 export const MODEL_MAP = {
   // oldtimerek
   'Chevelle SS':          '/models/chevrolet_chevelle_ss_454.glb',

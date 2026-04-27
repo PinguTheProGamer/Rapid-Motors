@@ -188,7 +188,7 @@ import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../../stores/auth';
 import axios from 'axios';
-import { getImagePath, huCategoryMap } from '../../assets/js/carData';
+import { getImagePath, huCategoryMap } from '../../assets/js/CarData.js';
 
 const router = useRouter();
 const authStore = useAuthStore();

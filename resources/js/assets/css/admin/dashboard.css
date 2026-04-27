@@ -118,8 +118,6 @@
   width: 100%;
 }
 
-/* ─── Dashboard layout ─────────────────────────────────────── */
-
 .dashboard-container {
   max-width: 1600px;
   margin: 0 auto;
@@ -156,8 +154,6 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
 }
-
-/* ─── Table ────────────────────────────────────────────────── */
 
 .cars-table {
   background: #0f0f0f;
@@ -257,8 +253,6 @@
   border-color: #ef4444;
   background: rgba(239, 68, 68, 0.1);
 }
-
-/* ─── Modal ────────────────────────────────────────────────── */
 
 .modal-overlay {
   position: fixed;
@@ -436,21 +430,17 @@
   cursor: not-allowed;
 }
 
-/* ─── Kiemelt autó toggle ──────────────────────────────────── */
-
 .featured-group {
   justify-content: flex-start;
 }
 
-/* The entire clickable area */
 .toggle-wrap {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   cursor: pointer;
   user-select: none;
-  /* vertically centre inside the form-group the same way inputs do */
-  height: 38px; /* matches input height at default padding */
+  height: 38px;
   margin-top: 2px;
 }
 
@@ -463,7 +453,6 @@
   pointer-events: none;
 }
 
-/* Pill track */
 .toggle-track {
   position: relative;
   width: 44px;
@@ -477,7 +466,6 @@
               box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Thumb / knob */
 .toggle-thumb {
   position: absolute;
   top: 3px;
@@ -490,7 +478,6 @@
               background 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Checked state — driven by the hidden input via sibling selector */
 .toggle-input:checked + .toggle-track {
   background: rgba(201, 169, 97, 0.25);
   border-color: #c9a961;
@@ -502,13 +489,11 @@
   background: #c9a961;
 }
 
-/* Focus ring for keyboard nav */
 .toggle-input:focus-visible + .toggle-track {
   outline: 2px solid #c9a961;
   outline-offset: 2px;
 }
 
-/* "Igen" / "Nem" text */
 .toggle-state-label {
   font-size: 0.88rem;
   font-weight: 500;
@@ -520,8 +505,6 @@
 .toggle-input:checked ~ .toggle-state-label {
   color: #c9a961;
 }
-
-/* ─── Delete modal ─────────────────────────────────────────── */
 
 .delete-overlay {
   z-index: 2100;
@@ -608,8 +591,6 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
-
-/* ─── Responsive ───────────────────────────────────────────── */
 
 @media (max-width: 1200px) {
   .dashboard-container { padding: 3rem 2rem; }

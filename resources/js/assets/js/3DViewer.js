@@ -183,7 +183,7 @@ export function use3DViewer(viewerContainer) {
       scene.add(model);
 
       viewerState.value = 'loaded';
-      showHintSoon(800); // ← FIX: was missing; hint never appeared after load
+      showHintSoon(800);
 
       const animate = () => {
         animationId = requestAnimationFrame(animate);
