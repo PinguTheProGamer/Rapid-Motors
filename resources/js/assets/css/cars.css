@@ -812,3 +812,10 @@
   .viewer-title { font-size: 1.4rem; }
   .viewer-info { padding: 1.25rem; }
 }
+
+@media (max-width: 480px) {
+    .filter-group {
+        display: flex;
+        flex-direction: column;
+    }
+}
